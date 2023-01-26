@@ -1,8 +1,5 @@
 package web.model;
 
-
-import java.util.List;
-
 public class Car {
     private String marka;
     private String model;
