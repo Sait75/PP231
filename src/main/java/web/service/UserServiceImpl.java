@@ -9,16 +9,15 @@ import web.model.User;
 
 import java.util.List;
 @Service
+@Transactional(readOnly = true)
 public class UserServiceImpl implements UserService{
-    @Autowired
     private final UserDao userDao;
-
+    @Autowired
     public UserServiceImpl(UserDao userDao) {
         this.userDao = userDao;
     }
 
     @Override
-    @Transactional
     public List<User> getAllUsers() {
         return userDao.getAllUsers();
     }

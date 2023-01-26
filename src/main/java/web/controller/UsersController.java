@@ -14,11 +14,11 @@ import java.util.List;
 
 @Controller
 public class UsersController {
-    @Autowired
-    private final UserService userService;
 
-    public UsersController(UserServiceImpl userServiceImpl) {
-        this.userService = userServiceImpl;
+    private final UserService userService;
+    @Autowired
+    public UsersController(UserService userService) {
+        this.userService = userService;
     }
     @GetMapping(value = "/")
     public String showAllUser (Model model ){
