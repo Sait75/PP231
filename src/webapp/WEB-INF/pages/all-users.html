@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,8 +7,10 @@
 </head>
 <body>
 <p>Список людей:</p>
-<!--<div th:each="cars : ${cars}"-->
-<!--#<p th:text="${cars}"/>-->
+<!--<div th:each="user : ${allUsers}">-->
+<!--    <a th:href="@{/{id}(id=${user.getId()})}" th:text="${user.getName()}">user</a>-->
+<!--</div>-->
+
 <table>
   <thead>
   <tr>
@@ -20,9 +23,14 @@
   <tbody>
   <tr th:each="user : ${allUsers}">
 <!--    <td th:text="${user.id}"></td>-->
-    <td th:text="${user.name}"></td>
+    <td>
+            <a th:href="@{/{id}(id=${user.getId()})}" th:text="${user.getName()}">User</a>
+      </td>
     <td th:text="${user.age}"></td>
 <!--    <td th:text="${car.number}"></td>-->
   </tr>
+  <br/>
+  <hr/>
+  <a href="/new">Create new user</a>
 </body>
 </html>
