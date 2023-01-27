@@ -8,10 +8,12 @@ import web.model.User;
 
 
 import java.util.List;
+
 @Service
 @Transactional(readOnly = true)
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
     private final UserDao userDao;
+
     @Autowired
     public UserServiceImpl(UserDao userDao) {
         this.userDao = userDao;
